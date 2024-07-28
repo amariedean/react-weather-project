@@ -1,0 +1,43 @@
+.Weather {
+  border: 1px solid #dadde1;
+  font-weight: 400;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.CityName {
+  font-size: 34px;
+  font-weight: 300;
+  margin: 0px;
+  padding: 0px;
+}
+
+.WeatherConditions {
+  font-size: 16px;
+  line-height: 1.25em;
+  margin: 0px;
+  padding: 0px;
+}
+
+.WeekDay {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+
+.Temperature {
+  font-size: 13px;
+  margin: 0px;
+  padding: 0px;
+}
