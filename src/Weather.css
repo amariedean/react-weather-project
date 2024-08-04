@@ -43,8 +43,8 @@ p {
 }
 
 .SearchButton {
-  background-color: rgb(5, 84, 124);
-  color: #fff;
+  background-color: rgb(5, 84, 124) !important;
+  color: #fff !important;
 }
 
 .CurrentTemperature {
