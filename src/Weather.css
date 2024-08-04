@@ -41,3 +41,8 @@ p {
   margin: 0px;
   padding: 0px;
 }
+
+.SearchButton {
+  background-color: rgb(5, 84, 124);
+  color: #fff;
+}
