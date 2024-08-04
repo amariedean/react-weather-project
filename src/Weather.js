@@ -8,7 +8,8 @@ export default function Weather(props) {
   const [temperature, setTemperature] = useState(null);
 
   function handleResponse(response) {
-    setTemperature(response.data.main.temp);
+    console.log(response.data);
+    setTemperature(Math.round(response.data.temperature.current));
     setReady(true);
   }
 
@@ -21,9 +22,9 @@ export default function Weather(props) {
 
   if (ready) {
     return (
-      <div className="Search mt-2 mb-4">
-        <form>
-          <div className="row">
+      <div className="Weather m-4 p-4">
+        <form className="SearchForm">
+          <div className="row gx-2 mb-4">
             <div className="col-9">
               <input
                 type="search"
@@ -34,29 +35,30 @@ export default function Weather(props) {
             <div className="col-3 p-0">
               <input
                 type="submit"
-                className="SearchButton btn w-100"
+                className="SearchButton btn btn-primary w-100"
                 value="Search"
               />
             </div>
           </div>
         </form>
-        <div className="Weather mt-4 p-4">
-          <div className="container">
-            <div className="WeatherInfo row align-items-center">
-              <div className="col-sm-4">
-                <h1 className="CityName">Miami</h1>
-              </div>
-              <div className="col-sm-3">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="partly cloudy"
-                ></img>
-              </div>
-              <div className="col-sm-5 pt-1">
-                <p className="WeatherConditions">{temperature}</p>
-                <p className="WeatherConditions">Saturday 22:15</p>
-                <p className="WeatherConditions">partly cloudy</p>
-              </div>
+        <div className="container">
+          <div className="WeatherInfo row align-items-center">
+            <div className="col-sm-4">
+              <h1 className="CityName">Miami</h1>
+            </div>
+            <div className="col-sm-3">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="partly cloudy"
+              ></img>
+              <p className="CurrentTemperature">
+                {temperature}
+                <sup>°F</sup>
+              </p>
+            </div>
+            <div className="col-sm-5 pt-1">
+              <p className="WeatherConditions">Saturday 22:15</p>
+              <p className="WeatherConditions">partly cloudy</p>
             </div>
           </div>
         </div>

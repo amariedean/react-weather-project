@@ -23,7 +23,7 @@ p {
 }
 
 .WeatherConditions {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.25em;
   margin: 0px;
   padding: 0px;
@@ -45,4 +45,8 @@ p {
 .SearchButton {
   background-color: rgb(5, 84, 124);
   color: #fff;
+}
+
+.CurrentTemperature {
+  font-size: 22px;
 }
