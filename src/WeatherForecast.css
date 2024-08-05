@@ -1,0 +1,19 @@
+.WeekDay {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+
+.High {
+  font-size: 13px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.Low {
+  font-size: 13px;
+  opacity: 0.75;
+  margin: 0px;
+  padding: 0px;
+}
