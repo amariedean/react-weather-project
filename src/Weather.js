@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
-  const [ready, setReady] = useState({ ready: false });
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     console.log(response.data);
@@ -13,9 +14,8 @@ export default function Weather(props) {
       ready: true,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
-      date: "Sunday 22:15",
-      iconUrl:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png",
+      date: new Date(response.data.time * 1000),
+      iconUrl: response.data.condition.icon_url,
       city: response.data.city,
     });
   }
@@ -26,16 +26,26 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather m-2 p-4">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row gx-2 mb-4">
             <div className="col-9">
               <input
                 type="input"
                 className="SearchInput form-control"
                 placeholder="Enter a City"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3 p-0">
@@ -47,30 +57,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <div className="container">
-          <div className="WeatherInfo row align-items-center">
-            <div className="col-sm-4">
-              <h1 className="CityName">{weatherData.city}</h1>
-            </div>
-            <div className="col-sm-4">
-              <img
-                className="icon align-items-center"
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-              ></img>
-              <p className="CurrentTemperature">
-                {Math.round(weatherData.temperature)}
-                <sup>°F</sup>
-              </p>
-            </div>
-            <div className="col-sm-4 pt-1">
-              <p className="WeatherConditions">{weatherData.date}</p>
-              <p className="WeatherConditions text-capitalize">
-                {weatherData.description}
-              </p>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
