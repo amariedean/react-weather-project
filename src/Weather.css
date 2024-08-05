@@ -15,15 +15,19 @@ p {
   padding: 0px;
 }
 
+sup {
+  font-size: 12px !important;
+}
+
 .CityName {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 300;
   margin: 0px;
   padding: 0px;
 }
 
 .WeatherConditions {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.25em;
   margin: 0px;
   padding: 0px;
@@ -49,4 +53,9 @@ p {
 
 .CurrentTemperature {
   font-size: 22px;
+}
+
+.icon {
+  margin: 0;
+  padding: 0;
 }
