@@ -19,18 +19,31 @@ sup {
   font-size: 12px !important;
 }
 
+.SearchButton {
+  background-color: rgb(5, 84, 124) !important;
+  color: #fff !important;
+}
+
 .CityName {
-  font-size: 30px;
+  font-size: 26px;
+  line-height: 1.25em;
   font-weight: 300;
   margin: 0px;
   padding: 0px;
 }
 
-.WeatherConditions {
-  font-size: 16px;
-  line-height: 1.25em;
+.Current {
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 400;
   margin: 0px;
   padding: 0px;
+}
+
+.icon {
+  max-width: 80px;
+  margin: 0;
+  padding: 0;
 }
 
 .WeekDay {
@@ -44,18 +57,4 @@ sup {
   font-size: 13px;
   margin: 0px;
   padding: 0px;
-}
-
-.SearchButton {
-  background-color: rgb(5, 84, 124) !important;
-  color: #fff !important;
-}
-
-.CurrentTemperature {
-  font-size: 22px;
-}
-
-.icon {
-  margin: 0;
-  padding: 0;
 }
