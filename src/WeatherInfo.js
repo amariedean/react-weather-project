@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
@@ -21,7 +22,9 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-sm-4 pt-1">
           <FormattedDate date={props.data.date} />
-          <p className="Current text-capitalize">{props.data.description}</p>
+          <p className="Description text-capitalize">
+            {props.data.description}
+          </p>
         </div>
       </div>
     </div>
