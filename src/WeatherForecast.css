@@ -1,3 +1,14 @@
+:root {
+  --primary-color: #05547c;
+  --secondary-color: #077bb6;
+}
+
+.ForecastDay:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 4px;
+}
+
 .WeekDay {
   font-size: 15px;
   font-weight: 400;
@@ -16,4 +27,9 @@
   opacity: 0.75;
   margin: 0px;
   padding: 0px;
+}
+
+#forecastIcon {
+  width: 50px;
+  height: 50px;
 }
