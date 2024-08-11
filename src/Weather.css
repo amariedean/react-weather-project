@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #05547c;
+  --secondary-color: #077bb6;
+}
+
 .Weather {
   border: 1px solid #dadde1;
   font-weight: 400;
@@ -20,8 +25,15 @@ sup {
 }
 
 .SearchButton {
-  background-color: rgb(5, 84, 124) !important;
+  background-color: var(--primary-color) !important;
   color: #fff !important;
+  cursor: pointer;
+}
+
+.SearchButton:hover {
+  background-color: var(--secondary-color) !important;
+  color: #fff !important;
+  cursor: pointer;
 }
 
 .CityName {
